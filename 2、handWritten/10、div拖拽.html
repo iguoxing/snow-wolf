@@ -1,0 +1,84 @@
+<!--
+ Copyright 2021 zhaoarden
+ 
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+ 
+     http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- 方案1 jQuery + JS模拟 -->
+<!-- <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script> -->
+<!-- <div id="dragBox">拖拽我</div> -->
+<!-- <style>
+        #dragBox {
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: absolute;
+            cursor: move;
+        }
+    </style> -->
+<!-- <script>
+        var dragging = false;
+        var position = null;
+        document.addEventListener('mousedown', function (e) {
+            dragging = true;
+            position = [e.clientX, e.clientY];
+        });
+        document.addEventListener('mouseover', function (e) {
+            if (dragging === false) return null;
+            const x = e.clientX;
+            const y = e.clientY;
+            console.log('e', e);
+            dragBox.style.left = x + 'px';
+            dragBox.style.top = y + 'px';
+            position = [x, y];
+            console.log(dragBox.style);
+        })
+        document.addEventListener('mouseup', function (e) {
+            dragging = false;
+        })
+    </script> -->
+
+<!-- 方案2 jQuery -->
+<link rel="stylesheet" href="http://apps.bdimg.com/libs/jqueryui/1.10.4/css/jquery-ui.min.css">
+<script src="http://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<style>
+    #draggable {
+        width: 150px;
+        height: 150px;
+        padding: 0.5em;
+    }
+</style>
+<div id="draggable" class="ui-widget-content">
+    <p>请拖动我！</p>
+</div>
+<script>
+    $(function () {
+        $("#draggable").draggable();
+    });
+</script>
+
+<body>
+
+
+</body>
+
+</html>
