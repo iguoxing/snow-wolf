@@ -2,7 +2,7 @@
  * @Author: ArdenZhao
  * @Date: 2022-02-25 17:25:07
  * @LastEditors: Do not edit
- * @LastEditTime: 2022-02-25 18:10:45
+ * @LastEditTime: 2022-02-25 18:13:46
  * @FilePath: /snow-wolf/3、algorithm/18-目标和.js
  * https://leetcode-cn.com/problems/target-sum/
  */
@@ -15,6 +15,7 @@
  * @param {number} target
  * @return {number}
  */
+// 回溯 深度遍历
 var findTargetSumWays = function (nums, target) {
   let count = 0;
   let dfs = function (nums, target, index, sum) {
