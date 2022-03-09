@@ -25,7 +25,7 @@ var spiralOrder = function (matrix) {
     // console.log('[ nextRow ] >', nextRow, nextColumn, directionIndex)
     if (!(0 <= nextRow && nextRow < rows && 0 <= nextColumn && nextColumn < columns && !(visited[nextRow][nextColumn]))) {
       directionIndex = (directionIndex + 1) % 4;
-      console.log('[超过范围，换方向， directionIndex ] >', directionIndex)
+      // console.log('[超过范围，换方向， directionIndex ] >', directionIndex)
     }
     row += directions[directionIndex][0];
     column += directions[directionIndex][1];
