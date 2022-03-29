@@ -1,7 +1,7 @@
 /*
  * @Author: ArdenZhao
  * @Date: 2022-03-28 18:30:11
- * @LastEditTime: 2022-03-28 18:31:03
+ * @LastEditTime: 2022-03-29 11:19:12
  * @FilePath: /snow-wolf/3、algorithm/4-stack/1-剑指 Offer 09. 用两个栈实现队列.js
  * @Description: file information
  * https://leetcode-cn.com/problems/yong-liang-ge-zhan-shi-xian-dui-lie-lcof/
@@ -15,8 +15,10 @@
 输出：[null,null,3,-1]
  */
 
+// 我的卡点在于是函数作用域内的变量是用this
 var CQueue = function () {
-
+  this.stack1 = [];
+  this.stack2 = [];
 };
 
 /**
@@ -24,19 +26,28 @@ var CQueue = function () {
  * @return {void}
  */
 CQueue.prototype.appendTail = function (value) {
-
+  this.stack1.push(value);
 };
 
 /**
  * @return {number}
  */
 CQueue.prototype.deleteHead = function () {
-
+  if (this.stack2.length === 0) {
+    while (this.stack1.length > 0) {
+      this.stack2.push(this.stack1.pop());
+    }
+  }
+  if (this.stack2.length > 0) {
+    return this.stack2.pop();
+  } else {
+    return -1;
+  }
 };
 
-/**
- * Your CQueue object will be instantiated and called as such:
- * var obj = new CQueue()
- * obj.appendTail(value)
- * var param_2 = obj.deleteHead()
- */
+var obj = new CQueue()
+console.log(obj)
+obj.appendTail(1)
+console.log(obj)
+var param_2 = obj.deleteHead()
+console.log(param_2)
